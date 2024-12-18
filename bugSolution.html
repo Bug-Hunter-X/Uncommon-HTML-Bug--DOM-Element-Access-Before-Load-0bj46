@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    // Solution 1: Check if the element exists before accessing it.
+    if (document.getElementById('myDiv')) {
+      document.getElementById("myDiv").innerHTML = "<p>This is in the div</p>";
+    } else {
+      console.error("Element with id 'myDiv' not found.");
+    }
+
+    // Solution 2: Using DOMContentLoaded event for execution
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.getElementById("myDiv").innerHTML = "<p>This is in the div</p>";
+    });
+  </script>
+</body>
+</html>
