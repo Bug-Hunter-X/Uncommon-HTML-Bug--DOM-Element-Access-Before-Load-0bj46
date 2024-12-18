@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <p>This is a paragraph.</p>
+  <div id="myDiv"></div>
+
+  <script>
+    // This line will throw an error in some browsers if the div element doesn't exist yet.
+    document.getElementById("myDiv").innerHTML = "<p>This is in the div</p>";
+    // Another way to handle this situation is to check if the element exists
+    if (document.getElementById('myDiv')){
+      document.getElementById("myDiv").innerHTML = "<p>This is in the div</p>";
+    }
+  </script>
+</body>
+</html>
